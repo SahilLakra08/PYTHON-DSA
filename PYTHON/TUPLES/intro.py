@@ -2,8 +2,8 @@ tple=(1,2,3,'India',22.7,'a+3x')
 print(tple)
 print(tple[0])
 
-#tuples contains contants means it has elements which remains unchanged .like company name etc
-#we cannot can elements forcefully like we do in list
+#tuples contains constants means it has elements which remains unchanged .like company name etc
+#we cannot modify or make changes in tuple or elements forcefully like we do in list
 #tple[4]=91.2
 #print(tple)
 #while and for loop are same

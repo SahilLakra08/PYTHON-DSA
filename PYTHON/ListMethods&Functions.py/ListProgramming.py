@@ -1,7 +1,6 @@
 #LIST HAS TWO TYPES OF FUNCTIONS OR METHODS
 '''
------>BUILT-IN FUNCTIONS:     ------>METHODS:written with'.then function 'dot lgta h ismai
-1.len(l1)                           1. .count() element which comes the most (searching)
+ 1.len(l1)                           1. .count() element which comes the most (searching)
 2.max(l1)                           2. .index() tells the index element(searching)
 3.min(l1)                           3. .sort()
 4.sum()                             4. .reverse()
