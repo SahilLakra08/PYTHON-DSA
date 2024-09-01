@@ -23,7 +23,7 @@ def Dequeue(q):
     if rear == -1 and front == 0 :
         print('Queue Empty or Underflow')
     else:
-        a=int(input('Enter the number you want to delete: '))
+       
         if front == rear :
             front=0
             rear=-1

@@ -4,30 +4,44 @@ maxqueue = 10
 
 def Enqueue(q):
     global rear
-    if rear == maxqueue-1:
+
+    if front == rear+1 and rear!=-1 :
+        print('Queue Overflow')
+    elif front ==0 and rear == maxqueue-1:
         print('Queue Overflow')
     else:
         num=int(input('Enter the number to be added: '))
-        rear=rear+1
-        q[rear]=num
+        if (front !=0 and rear == maxqueue-1):
+            rear=0
+            q[rear]=num
+        else:
+            rear=rear+1
+            q[rear]=num
 
 def Dequeue(q):
     global rear
     global front
-    if rear == -1 and front == 0 :
-        print('Queue Empty or Underflow')
-    else:
-        a=int(input('Enter the number you want to delete: '))
-        if front == rear :
+
+    if front==0 and rear==-1:
+        print("Queue Underflow")
+    elif front ==maxqueue-1:
+        front=0
+    elif  front == rear and rear != -1 :
             front=0
             rear=-1
-        else:
+    else:
             front=front+1
 
 def display(q):
     global front
-    for i in range(front,rear+1):
-        print(q[i])
+    if(rear>=front):
+        for i in range(front,rear+1):
+            print(q[i])
+    else:
+        for i in range(front,maxqueue):
+            print(q[i])
+        for j in range(0,rear+1):
+            print(q[j])
 
 q=[0 for i in range (maxqueue)]
 while(True):
