@@ -1,4 +1,4 @@
-  # self means pointer to itself
+3  # self means pointer to itself
 class Dishes:
     def __init__(self):
         self.DishNo = int(input('Enter the DishN0:'))
