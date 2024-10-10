@@ -19,14 +19,17 @@ class LinkedList:
             self.rear = self.rear.link
 
     def dequeue(self):
-        if front == None :
+        if self.front == None :
             print('Queue is empty')
         else :
+            self.ptr=self.front
             self.front = self.front.link
+            self.ptr=None
             # self.p.link = None #detach 1rst node from linked queue
 
     def display(self):
         self.p = self.front
+        print(self.front)
         while(self.p is not None ):
             print(self.p.data, end = '->' )
             self.p=self.p.link

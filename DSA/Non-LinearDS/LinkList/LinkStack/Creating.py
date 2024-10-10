@@ -6,7 +6,13 @@ class LinkedList:
     def __init__(self):
         self.top = None
         self.q=None
-
+    # TO PRINT ALTERNATE ELEMENTS
+    def print1(self):
+        self.ptr = self.top
+        while(self.ptr != None and self.ptr.link != None):
+            print(self.ptr.data ,end= "->")
+            self.ptr = self.ptr.link.link
+            
     def push1(self): 
             data=int(input('enter the element to be inserted: '))
             self.q=node(data)
@@ -41,7 +47,8 @@ while(True):
     print('         2.POP       ')
     print('         3.PEEK       ')
     print('         4.DISPLAY       ')
-    print('         5.EXIT       ')
+    print('         5.Print ALternate       ')
+    print('         6.EXIT       ')
 
     choice=int(input('Enter your choice: '))
 
@@ -59,6 +66,8 @@ while(True):
         st.display1()
 
     elif choice == 5:
+        st.print1()
+    elif choice == 6:
         exit(0)
     else :
         print('Wrong Choice')
