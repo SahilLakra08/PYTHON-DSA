@@ -6,6 +6,7 @@ class node:
         self.data = d
         self.left = None
         self.right = None
+        self.height = None
 
 def insert1(root,num):
     if root == None:     
@@ -48,7 +49,24 @@ def countnodes(root):
          p= countnodes(root.left)
          q= countnodes(root.right)
          return 1+p+q
-     
+    
+def getHeight(root):
+     if root is None:
+          return -1
+     else:
+        #   root.height = 1+max(getHeight(root.left),getHeight(root.right))
+        #   return root.height 
+
+        x= getHeight(root.left)
+        y = getHeight(root.right)
+        return 1 + max(x,y)
+
+def getBalance(root):
+     if root is None:
+          return 0
+     else:
+          balance = getHeight(root.left) - getHeight(root.right)
+          return balance
 def inorder(root):
         if root == None:
               return 
@@ -59,7 +77,7 @@ def inorder(root):
 
 def preorder(root):
       if root == None:
-            return
+            return 0
       else:
             print(root.data)
             preorder(root.left)
@@ -72,7 +90,7 @@ def postorder(root):
             postorder(root.left)
             postorder(root.right)
             print(root.data)
-           
+# insertion           
 root = None
 nodes = int(input('enter the number of nodes : '))
 for i in range(nodes):
@@ -98,11 +116,35 @@ inorder(root)
 #count
 # y=countnodes(root)
 # print('Size of tree: ',y)
+
+
 #check isBSt
 min1 = 0
 max1 = 100
 i = isBSt(root,min1,max1)
 print(i)
+
+#get Height
+j = getHeight(root)
+print('Height : ',j)
+
+# get balance
+balance = 0
+k = getBalance(root) 
+print("Balance: ",k)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # DEFINITIONS:
 # root
